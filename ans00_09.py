@@ -29,6 +29,20 @@ print(u"解答 ;str1[0]+str2[0]+str1[1]+str2[1]+\
  str1[2]+str2[2]+str1[3]+str2[3]\n -> " + str3)
 
 #うーん、力技だなぁ。ま、初めだしいいか。
+#やっぱり、あまりにひどいので、forで処理
+
+str1 = u"パトカー"
+str2 = u"タクシー"
+print(u"str1 <-" + str1)
+print(u"str2 <-" + str2)
+str3=u""
+for (i) in range(0,4):
+    str3 = str3 + str1[i]+str2[i]
+print(u"結合表示 ;\n\
+      for (i) in range(0,4):\n\
+      str3 = str3 + str1[i]+str2[i]\n\
+       -->> " + str3)   
+
 
 
 
