@@ -1,4 +1,6 @@
-﻿#00. 文字列の逆順
+﻿# -*- coding: utf-8 -*- 
+
+#00. 文字列の逆順
 #文字列"stressed"の文字を逆に（末尾から先頭に向かって）並べた文字列を得よ．
 
 'stressed' [::-1]
@@ -45,6 +47,26 @@ print(u"結合表示 ;\n\
 
 #追記してみる
 
+
+#03. 円周率
+
+print(u"第3問 ")
+
+hoge = "Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics."
+print(hoge)
+hoge = hoge.replace(",","")
+hoge = hoge.replace(".","")
+words = hoge.split(" ")
+print(hoge)
+print(words)
+
+list = []
+for i in  range(len(words)) :
+    list.append(len(words[i]))
+print(list)
+
+for i in  range(len(words)) :
+     print(i,words[i], len(words[i]))
 
 
 
