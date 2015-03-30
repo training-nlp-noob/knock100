@@ -69,7 +69,29 @@ for i in  range(len(words)) :
      print(i,words[i], len(words[i]))
 
 
+#05. n-gram
 
+print("第5問")
+ 
+text = "I am an NLPer"
+print(text)
+text =text.replace( " ","")
+print(text)
+
+def ngram (input , N ):
+    """ make empty list then slice the imput
+    if there exists space, you need del spaces before applying function
+    """
+    ret=[]
+    for i in range(len(input)-N+1):
+        ret.append(input[i:i+N])
+    return ret
+
+
+ans5_1 = ngram(text,2)
+print(ans5_1)
+ans5_2 = ngram (text,1)
+print(ans5_2)
 
 
 
