@@ -90,25 +90,66 @@ print(dic)
 
 print("第5問")
  
-text = "I am an NLPer"
-print(text)
-text =text.replace( " ","")
+text = "Yes, I am an NLPer."
 print(text)
 
-def ngram (input , N ):
-    """ make empty list then slice the imput
-    if there exists space, you need del spaces before applying function
+def N_gram_Character (input, N):
+    """
+    文字列 character　N-gramとして、この関数では記号をいったん抜いて、
+    空白はアンダーバーで明示
     """
     ret=[]
+    input =input.replace("  "," ")
+    input =input.replace(",","")
+    input =input.replace(".","")
+    input =input.replace("?","")
+    input =input.replace(";","")
+    input =input.replace(":","")
+    input =input.replace(" ","_")
     for i in range(len(input)-N+1):
         ret.append(input[i:i+N])
     return ret
 
+def N_gram_Word (input, N):
+    """
+    単語 character　N-gramとして、この関数では記号をいったん抜いて、
+    単語間を同じくアンダーバーで明示
+    """
+    ret=[]
+    input =input.replace("  "," ")
+    input =input.replace(",","")
+    input =input.replace(".","")
+    input =input.replace("?","")
+    input =input.replace(";","")
+    input =input.replace(":","")
+    word = input.split(" ")
+    for i in range(len(word)-N+1):
+        append_words = word[i]
+        for j in range(N-1):
+            append_words = append_words + '_' + word[i+j+1]
+        ret.append(append_words)
+    return ret
 
-ans5_1 = ngram(text,2)
+
+
+
+ans5_1 = N_gram_Word (text,2)
+print("単語bi-gram -> N_gram_Word (text,2)")
 print(ans5_1)
-ans5_2 = ngram (text,1)
+
+ans5_2 = N_gram_Character (text,2)
+print("文字bi-gram -> N_gram_Character (text,2)")
 print(ans5_2)
+
+#せっかく、Ngramなので
+
+ans5_3 = N_gram_Word (text,3)
+print("単語tri-gram -> N_gram_Word (text,3)")
+print(ans5_3)
+
+ans5_4 = N_gram_Character (text,3)
+print("文字tri-gram -> N_gram_Character (text,3)")
+print(ans5_4)
 
 
 
