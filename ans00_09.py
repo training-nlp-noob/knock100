@@ -153,6 +153,80 @@ print(ans5_4)
 
 
 
+'''
+06. 集合
+"paraparaparadise"と"paragraph"に含まれる文字bi-gramの集合を，
+それぞれ, XとYとして求め，XとYの和集合，積集合，差集合を求めよ．
+さらに，'se'というbi-gramがXおよびYに含まれるかどうかを調べよ．
+'''
+
+def N_gram_Character (input, N):
+    ret=[]
+    input =input.replace("  "," ")
+    input =input.replace(",","")
+    input =input.replace(".","")
+    input =input.replace("?","")
+    input =input.replace(";","")
+    input =input.replace(":","")
+    input =input.replace(" ","_")
+    for i in range(len(input)-N+1):
+        ret.append(input[i:i+N])
+    return ret
+
+X = N_gram_Character (u"paraparaparadise", 2)
+
+Y = N_gram_Character (u"paragraph", 2)
+
+print("X= ;")
+print(X)
+print("Y= ;")
+print(Y)
+print("\n")
+
+print("XとYの和集合; set(X)|set(Y)")
+print(set(X)|set(Y))
+print("\n")
+print("XとYの和集合2; set(X).union(set(Y))")
+print(set(X).union(set(Y)))
+print("\n")
+
+print("XとYの積集合; set(X)&set(Y)")
+print(set(X)&set(Y))
+print("\n")
+print("XとYの積集合2; set(X).intersection(set(Y))")
+print(set(X).intersection(set(Y)))
+print("\n")
+
+print("XとYの差集合 XにあるがYにない; set(X)-set(Y)")
+print(set(X)-set(Y))
+print("\n")
+print("XとYの差集合2 XにあるがYにない; set(X).difference(set(Y))")
+print(set(X).difference(set(Y)))
+print("\n")
+print("XとYの差集合 YにあるがXにない; set(Y)-set(X)")
+print(set(Y)-set(X))
+print("\n")
+print("XとYの差集合2 YにあるがXにない; set(Y).difference(set(X))")
+print(set(Y).difference(set(X)))
+print("\n")
+print("XとYの差集合? XかYどちらかにある; set(X)^set(Y)")
+print(set(X)^set(Y))
+print("\n")
+print("XとYの差集合2? XかYどちらかにあ; set(X).symmetric_difference(set(Y))")
+print(set(X).symmetric_difference(set(Y)))
+print("\n")
+
+# 'se' を探せ 2種類
+
+if X.index('se') > 0:
+    print ('隊長、ありました')
+else:
+    print ('悪魔の証明は困ります')
+print("\n")
+if Y.count('se') > 0:
+    print ('隊長、ありました')
+else:
+    print ('悪魔の証明は困ります')
 
 
 
