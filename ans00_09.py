@@ -228,6 +228,16 @@ if Y.count('se') > 0:
 else:
     print ('悪魔の証明は困ります')
 
+#Q7
+print('Q7')
+def func07(X,Y,Z):
+    print(X,'時の', Y, 'は' , Z , sep='')
+
+x= 12
+y= '気温'
+z= 22.4
+
+func07(x,y,z)
 
 
 
