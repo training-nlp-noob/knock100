@@ -233,11 +233,29 @@ print('Q7')
 def func07(X,Y,Z):
     print(X,'時の', Y, 'は' , Z , sep='')
 
-x= 12
-y= '気温'
-z= 22.4
+print('func07へ引数x, y, zを渡す')
+func07('x','y','z')
 
-func07(x,y,z)
+print('問題の例を代入してみる')
 
+func07(12,'気温',22.4)
+
+
+#Q8
+#大文字小文字の区別がまだ
+# Xが1でエンコード、　2ででコードwww
+print('Q8')
+def cipher (input, X):
+    ret=[]
+    for i in range(len(input)):
+        if X == 1:
+            ret.append(219-ord(input[i:i+1]))
+        if X == 2:
+            ret.append(219-ord(input[i:i+1]))
+    Y = ''
+    for j in range(len(input)):
+        Y = Y + chr(ret[j])
+    print(Y)
+    
 
 
