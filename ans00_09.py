@@ -242,20 +242,26 @@ func07(12,'気温',22.4)
 
 
 #Q8
-#大文字小文字の区別がまだ
-# Xが1でエンコード、　2ででコードwww
+# Xが1でエンコード、　2ででコードと思ったけど、同じだね分岐要らなかった
 print('Q8')
 def cipher (input, X):
     ret=[]
     for i in range(len(input)):
+        letter = input[i:i+1]
         if X == 1:
-            ret.append(219-ord(input[i:i+1]))
+            if letter.islower():
+                ret.append(219-ord(letter))
+            else:
+                ret.append(ord(letter))
         if X == 2:
-            ret.append(219-ord(input[i:i+1]))
+            if letter.islower():
+                ret.append(219-ord(letter))
+            else:
+                ret.append(ord(letter))
     Y = ''
     for j in range(len(input)):
         Y = Y + chr(ret[j])
     print(Y)
-    
+
 
 
