@@ -264,4 +264,30 @@ def cipher (input, X):
     print(Y)
 
 
+#Q9
+# http://stackoverflow.com/questions/2668312/shuffle-string-in-python
+
+x = "I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
+
+def func09 (x) :
+    import random
+    words = x.split(" ")
+    output =[]
+    for i in range(len(words)):
+        if len(words[i]) >4 :
+            str1 = words[i][1:len(words[i])-1]
+            str2 = list(str1)
+            random.shuffle(str2)
+            str3 =  "".join(str2)
+            output.append (words[i][0]+ str3 + words[i][len(words[i]) -1] )
+        else:
+            output.append(words[i])
+    return(" ".join(output))
+
+print(func09(x))
+                        
+                       
+
+
+
 
