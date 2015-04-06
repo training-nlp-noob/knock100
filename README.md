@@ -9,3 +9,5 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 Q10からは1問1ファイルに
 10問ごとに directoryを作成
 
+参考にしたリンクとかもコメントにして解答内に書こう
+
