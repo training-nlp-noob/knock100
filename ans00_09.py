@@ -231,13 +231,11 @@ else:
 #Q7
 print('Q7')
 def func07(X,Y,Z):
-    print(X,'時の', Y, 'は' , Z , sep='')
+    print(X, '時の' ,Y ,'は' ,Z ,sep='')
 
 print('func07へ引数x, y, zを渡す')
 func07('x','y','z')
-
 print('問題の例を代入してみる')
-
 func07(12,'気温',22.4)
 
 
@@ -267,6 +265,7 @@ def cipher (input, X):
 #Q9
 # http://stackoverflow.com/questions/2668312/shuffle-string-in-python
 
+print("Q9")
 x = "I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
 
 def func09 (x) :
@@ -284,5 +283,5 @@ def func09 (x) :
             output.append(words[i])
     return(" ".join(output))
 
-print(X)
+print(x)
 print(func09(x))
