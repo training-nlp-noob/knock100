@@ -5,3 +5,6 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 どっちも初心者
 
 ./data は おいてあるdataのコピーです。
+
+Q10からは1問1ファイルに 10問ごとに directoryを作成
+
