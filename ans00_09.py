@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*- 
+﻿# -*- coding: utf-8 -*-
 
 #00. 文字列の逆順
 #文字列"stressed"の文字を逆に（末尾から先頭に向かって）並べた文字列を得よ．
@@ -43,7 +43,7 @@ for (i) in range(0,4):
 print(u"結合表示 ;\n\
       for (i) in range(0,4):\n\
       str3 = str3 + str1[i]+str2[i]\n\
-       -->> " + str3)   
+       -->> " + str3)
 
 #追記してみる
 
@@ -69,7 +69,7 @@ for i in  range(len(words)) :
      print(i,words[i], len(words[i]))
 
 
-#4 
+#4
 print("Q4")
 
 hoge = "Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can."
@@ -89,7 +89,7 @@ print(dic)
 #05. n-gram
 
 print("第5問")
- 
+
 text = "Yes, I am an NLPer."
 print(text)
 
@@ -284,10 +284,5 @@ def func09 (x) :
             output.append(words[i])
     return(" ".join(output))
 
+print(X)
 print(func09(x))
-                        
-                       
-
-
-
-
