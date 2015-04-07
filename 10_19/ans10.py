@@ -18,6 +18,3 @@ import urllib.request
 f = urllib.request.urlopen("http://www.cl.ecei.tohoku.ac.jp/nlp100/data/hightemp.txt")
 print (len(f.readlines()))
 f.close()
-
-
-
