@@ -3,18 +3,20 @@
 
 # http://www.yukun.info/blog/2008/06/python-file.html
 
-import os
 import re
-print (os.getcwd())
 
-os.chdir("../data")
-print (os.getcwd())
-
-f= open("hightemp.txt","r",encoding="utf-8")
-with open("../rslt11.txt", "w") as r:
+f= open("./data/hightemp.txt","r",encoding="utf-8")
+with open("./rslt11.txt", "w") as r:
     line = f.readline()
     while line:
-        str1 = re.sub("¥t"," aaa ",line)
+        str1=re.sub("\t"," ",line)
+        print(line) #確認
+        print(str1) #確認
         r.write(str1)
         line = f.readline()
 f.close()
+
+
+## 置換が出来ないぞなんでだ raw文字列がなんかよくわかんないな
+# http://likealunatic.jp/2008/01/10_unicode.php
+# http://docs.python.jp/3.3/library/re.html
