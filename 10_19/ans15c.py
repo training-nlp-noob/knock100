@@ -30,10 +30,12 @@ try:
     f2 = open ("./data/hightemp.txt","r",encoding="utf-8")
     with f1, f2:
         linen = len(f1.readlines())
-        print("全部で" + str(linen) + "行。" + str(argvs[1]) + "行前からから末まで表示")
-        lines = f2.readlines()
-        for y in range(0,x):
-            print(lines[linen-x+y])
+        if x <= linen:
+            lines = f2.readlines()
+            for y in range(0,x):
+                print(lines[linen-x+y])
+        else:
+            print(str(linen) + "までの自然数を入れてください")
 except ValueError:
     print ("整数を入力してください")
 
