@@ -28,3 +28,5 @@ except ValueError:
 
 
 #Windows ではコマンドラインで　python ans14k.py 3 で実行します
+
+#　UNIXでは、　tail -n N hightemp.txt で確認できます。はい。
