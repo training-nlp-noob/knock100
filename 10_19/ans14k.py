@@ -28,7 +28,7 @@ try:
             lines = f2.readlines()
             for y in range(0,x): #最初は含む 最後は含まない・・・わかりにくい
                 #http://atkonn.blogspot.jp/2008/02/python-python21-range.html
-                print(lines[y])
+                print(lines[y].replace('\n', ''))
         else:
             print(str(linen) + "までの自然数を入れてください")
 except ValueError:
