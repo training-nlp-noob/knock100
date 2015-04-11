@@ -36,7 +36,7 @@ try:
         if x <= linen:
             lines = f2.readlines()
             for y in range(0,x):
-                print(lines[linen-x+y])
+                print(lines[linen-x+y].replace('\n', ''))
         else:
             print(str(linen) + "までの自然数を入れてください")
 except ValueError:
