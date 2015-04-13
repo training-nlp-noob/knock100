@@ -15,6 +15,43 @@ argvs = sys.argv  # コマンドライン引数を格納したリストの取得
 #リストで値が返されますが、最初の値には実行ファイル名が入りますので注意しましょう。
 #http://www.python-izm.com/contents/basis/command_line_arguments.shtml
 
+
+arg = sys.argv
+xx = int(arg[1])
+f = open ("./data/hightemp.txt","r",encoding="utf-8")
+ff = f.readlines()
+
+for i in range(0, len(ff)):
+    if i >= len(ff)-xx :
+        print(ff[i], end="")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # デバッグプリント
 print("渡されたパラメーターを一応確認表示です")
 print (argvs)
@@ -46,4 +83,3 @@ except ValueError:
 #Windows ではコマンドラインで　python ans15c.py 3 で実行します
 
 #　UNIXでは、　tail -n N hightemp.txt で確認できます。はい。
-
