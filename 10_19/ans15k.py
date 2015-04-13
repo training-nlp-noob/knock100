@@ -25,7 +25,7 @@ for i in range(0, len(ff)):
     if i >= len(ff)-xx :
         print(ff[i], end="")
 
-
+f.close()
 
 
 
