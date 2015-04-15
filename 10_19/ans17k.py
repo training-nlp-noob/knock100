@@ -1,4 +1,3 @@
-#UNIXに併せるので最後修正必要
 #!/usr/bin/env python 
 # coding=utf-8 
 
