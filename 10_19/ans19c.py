@@ -10,8 +10,11 @@ fl = f.readlines()
 f.close()
 
 words = []
-for i in range(0,len(fl)):
-    words.append(fl[i].split("\t")[0])
+# 少し書き換えます
+#for i in range(0,len(fl)):
+#    words.append(fl[i].split("\t")[0])
+for i in fl:
+    words.append(i.split("\t")[0])
 
 counter= Counter(words)
 for word, cnt in counter.most_common():
