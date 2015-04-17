@@ -7,6 +7,7 @@ from collections import Counter
 
 f = open ("./data/hightemp.txt","r",encoding="utf-8")
 fl = f.readlines()
+f.close()
 
 words = []
 for i in range(0,len(fl)):
