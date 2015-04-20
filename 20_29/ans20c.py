@@ -29,4 +29,4 @@ with gzip.open("./data/jawiki-country.json.gz", 'rt',encoding="utf8") as wiki:
         else:
             print("aaa")
 
-###うーん イギリス 以外も
+###json.dump すると イギリス以外もでちゃうな dumpしなければ解決っぽい
