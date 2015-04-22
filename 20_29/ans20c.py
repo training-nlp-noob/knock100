@@ -27,6 +27,7 @@ with gzip.open("./data/jawiki-country.json.gz", 'rt',encoding="utf8") as wiki:
         if json_data["title"] == "イギリス":
             print(json_data)
         else:
-            print("aaa")
+            print("aaa", type(json_data))
 
 ###json.dump すると イギリス以外もでちゃうな dumpしなければ解決っぽい
+# http://www.lifewithpython.com/2013/06/json.html
