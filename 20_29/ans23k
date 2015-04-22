@@ -46,11 +46,11 @@ section_list=[]
 
 for row_content in text_row:
     if row_content.find("====")>=0:
-        section_list.append("L3:" + row_content.replace("=",""))
+        section_list.append([row_content.replace("=",""),3])
     elif row_content.find("===")>=0:
-        section_list.append("L2:" + row_content.replace("=",""))
+        section_list.append([row_content.replace("=",""),2])
     elif row_content.find("==")>=0:
-        section_list.append("L1:" + row_content.replace("=",""))
+        section_list.append([row_content.replace("=",""),1])
 
 print("セクションの数：" + str(len(section_list)))
 print(section_list)
