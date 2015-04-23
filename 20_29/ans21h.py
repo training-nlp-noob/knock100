@@ -10,7 +10,7 @@ import re
 eng_json = []
 repattern = re.compile("イギリス",re.U)
 
-# 以下で記事中に、文字列"イギリス"を含む記事の題名と内容を集めた辞書オブジェクトを作成
+# 以下で記事中に、文字列"イギリス"を含む記事の題名と内容をピックアップ（もともとよみこんだjson_dataはdictなのでそのまま格納）
 
 with gzip.open("../data/jawiki-country.json.gz", 'rt',encoding="utf8") as wiki:
     for line in wiki:
