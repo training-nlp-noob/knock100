@@ -17,8 +17,7 @@ with gzip.open("../data/jawiki-country.json.gz", 'rt',encoding="utf8") as wiki:
         json_data = json.loads(line)
         m = repattern.search(json_data["text"])
         if m:
-            art = {"title":json_data["title"] , "text":json_data["text"]}
-            eng_json.append(art)
+            eng_json.append(json_data)
 
 pattern = re.compile("Category")
 
