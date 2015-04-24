@@ -23,3 +23,8 @@ print(len(a_22_1))
 print(a_22_1)
 
 #こっから文字列を綺麗にすればいいのかな。
+
+a_22_2 = []
+for i in range(len(a_22_1)):
+    a_22_2.append(a_22_1[i].replace("[[Category:","").replace("]]",""))
+print(a_22_2)
