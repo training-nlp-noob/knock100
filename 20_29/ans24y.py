@@ -38,4 +38,3 @@ with gzip.open("./data/jawiki-country.json.gz", 'rt',encoding="utf8") as wiki:
 for line in text:
     if findCut(line,"ファイル:","|"):
         findCut(line,"File:","|")
- 

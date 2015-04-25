@@ -30,7 +30,6 @@ while i < len(r_elem) - 1 :
         j -= 1
     i += 1
 
-
 r_str = []
 for rws in r_elem :
     r_str.append(" ".join(rws))
