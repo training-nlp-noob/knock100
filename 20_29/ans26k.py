@@ -13,7 +13,7 @@ Wikipediaの記事を以下のフォーマットで書き出したファイルja
 
 import gzip,json,re
 
-with gzip.open("./data/jawiki-country.json.gz", 'rt',encoding="utf8") as wiki:
+with gzip.open("../data/jawiki-country.json.gz", 'rt',encoding="utf8") as wiki:
     for line in wiki:
        json_data=json.loads(line)
        if json_data["title"] == "イギリス":
