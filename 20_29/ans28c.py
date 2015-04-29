@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-#Q26
-#強調表現の削除
+#Q28
+#マークアップの削除
 
 import gzip,json,re
 
@@ -34,33 +34,30 @@ for row in temp:
     else :   #公式国名
         dic[key] += row
 
-"""
-print(len(temp))
-print (len(dic.keys()))
-print ("keyの一覧")
-print(dic.keys())
-print ("===valueの一覧===")
-print(dic.values())
-"""
-dic2  = dic
-for n in dic2.keys():
-    new_value = dic2[n].replace("'", "")
-    dic2[n] = new_value
 
+def remove_markdown1 (d_obj,pat):
+    for n in d_obj:
+        d_obj[n] = re.sub(pat,"",d_obj[n])
+    return(d_obj)
 
-#print("強調表現削除後")
-#print(dic2.values())
+# http://docs.python.jp/3.4/howto/regex.html#grouping
+# re.sub(pattern, repl, string, count=0, flags=0)
+#  のところを参照
 
-for n in dic2.keys()    :
-    dic2[n] = re.sub(r"\[\[|\]\]","",dic2[n])
+def remove_markdown2 (d_obj,pat):
+    for n in d_obj:
+        d_obj[n] = re.sub(pat, r"\0", d_obj[n])
+    return(d_obj)
 
-print("内部リンク除去後")
-print(dic2.values())
+#名前つけたときの取り出し方がわかんない
+# コンパイルしてないけどいいのかしら・
 
-for n in dic2.keys():
-    dic2[n] = re.sub(r"\[\[ファイル.+\]\]","",dic2[n])
+dic = remove_markdown1 (dic, r"'")
+dic = remove_markdown2 (dic, r"\[\[ファイル:(.+?)\]\]")
+dic = remove_markdown2 (dic, r"\[\[Category:(.+?)\]\}")
+dic = remove_markdown2 (dic, r"\[http:(.+?)\]")
+dic = remove_markdown1 (dic, r"\[\[|\]\]")
 
-#なるほど。前で除去しちゃってるからマッチしないな。
-
-print("===")
-print(dic2.values())
+for p in dic.items():
+    print(p)
+    print("=========")
