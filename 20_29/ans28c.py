@@ -35,7 +35,7 @@ for row in temp:
         dic[key] += row
 
 
-def remove_markdown1 (d_obj,pat):
+def remove_markdown1(d_obj,pat):
     for n in d_obj:
         d_obj[n] = re.sub(pat,"",d_obj[n])
     return(d_obj)
@@ -44,7 +44,7 @@ def remove_markdown1 (d_obj,pat):
 # re.sub(pattern, repl, string, count=0, flags=0)
 #  のところを参照
 
-def remove_markdown2 (d_obj,pat):
+def remove_markdown2(d_obj,pat):
     for n in d_obj:
         d_obj[n] = re.sub(pat, r"\g<1>", d_obj[n])
     return(d_obj)
@@ -56,6 +56,7 @@ def remove_markdown2 (d_obj,pat):
 
 dic = remove_markdown1 (dic, r"'")
 dic = remove_markdown2 (dic, r"\[\[ファイル:(.+?)\]\]")
+dic = remove_markdown2 (dic, r"\[\[File:(.+?)\]\]")
 dic = remove_markdown2 (dic, r"\[\[Category:(.+?)\]\}")
 dic = remove_markdown2 (dic, r"\[http:(.+?)\]")
 dic = remove_markdown1 (dic, r"\[\[|\]\]")
