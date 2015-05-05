@@ -46,11 +46,13 @@ def remove_markdown1 (d_obj,pat):
 
 def remove_markdown2 (d_obj,pat):
     for n in d_obj:
-        d_obj[n] = re.sub(pat, r"\0", d_obj[n])
+        d_obj[n] = re.sub(pat, r"\g<1>", d_obj[n])
     return(d_obj)
 
 #名前つけたときの取り出し方がわかんない
 # コンパイルしてないけどいいのかしら・
+
+
 
 dic = remove_markdown1 (dic, r"'")
 dic = remove_markdown2 (dic, r"\[\[ファイル:(.+?)\]\]")
