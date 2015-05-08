@@ -27,3 +27,5 @@ for keys, values in dic.items():
 
 URL = "http://ja.wikipedia.org/w/ファイル:" + dic['国旗画像']
 print(URL)
+
+http://ja.wikipedia.org/w/api.php?format=json&action=query&titles=Main%20Page&prop=imageinfo
