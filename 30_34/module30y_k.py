@@ -9,7 +9,7 @@ with open("../data/neko.txt.mecab", encoding="utf8") as f:
 
 # 初期化
 pattern=re.compile(r"(?P<surface>.+)\t(?P<pos>[^,]+),(?P<pos1>[^,]+),(?P<pos2>[^,]+),(?P<pos3>[^,]+),(?P<conjForm>[^,]+),(?P<conjType>[^,]+),(?P<base>[^,]+),?(.*)")
-list=[]
+listx=[] #listが予約語っぽいので、名前を変えました
 dic={}
 
 # list[dic[0],dic[1],dic[2],...]形式で形態素を収納
@@ -22,6 +22,6 @@ for i,line in enumerate(text):
     dic[i]["pos"]=pos
     dic[i]["pos1"]=pos1
     dic[i]["base"]=base
-    list.append(dic[i])
+    listx.append(dic[i])
 
-print("隊長！　list に格納しました！")
+print("隊長！　listx に格納しました！")
