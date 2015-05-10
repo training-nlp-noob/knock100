@@ -30,10 +30,10 @@ f.close()
 
 # 初期化
 pattern=re.compile(r"(?P<surface>.+)\t(?P<pos>[^,]+),(?P<pos1>[^,]+),(?P<pos2>[^,]+),(?P<pos3>[^,]+),(?P<conjForm>[^,]+),(?P<conjType>[^,]+),(?P<base>[^,]+),?(.*)")
-list=[]
+dic_list=[]
 dic={}
 
-# list[dic[0],dic[1],dic[2],...]形式で形態素を収納
+# dic_list[dic[0],dic[1],dic[2],...]形式で形態素を収納
 for i,line in enumerate(text):
     if line=="EOS\n":
         break
@@ -43,9 +43,9 @@ for i,line in enumerate(text):
     dic[i]["pos"]=pos
     dic[i]["pos1"]=pos1
     dic[i]["base"]=base
-    list.append(dic[i])
+    dic_list.append(dic[i])
     
 # 品詞が動詞なら、表層形を表示
-for item in list:
+for item in dic_list:
     if item["pos"]=="動詞":
         print(item["surface"])
