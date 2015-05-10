@@ -8,7 +8,7 @@
 import MeCab #,sys
 
 with open ("../data/neko.txt","r",encoding="utf-8") as neko, \
-     open ("../data/neko.txt.c.mecab","w",encoding="utf-8") as out: #モードをaからwに変更
+     open ("../data/neko.txt.mecab","w",encoding="utf-8") as out: #モードをaからwに変更
         f = neko.read()
         m = MeCab.Tagger() #デフォルト("mecabrc")、茶筅は("-Ochasen")
         out.write(m.parse(f))
