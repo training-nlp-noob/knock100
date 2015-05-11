@@ -8,6 +8,14 @@ for item in module30y_k.listx:
     if item["pos"]=="動詞":
         verb.append(item["surface"])
 
+num1 = len(verb)
+#重複を削除
+verb = list(set(verb))
+
+num2 = len(verb)
+
+print(str(num1)+"のリストから重複を削除して残り"+str(num2))
+
 print("サンプルで、100個ほど表示")
 print(verb[:99])
 
