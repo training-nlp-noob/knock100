@@ -17,18 +17,9 @@
 import ans30c
 imput = ans30c.f30("../data/neko.txt.mecab")
 
-"""
-3つの要素をつかってlistをまわす方法がわかんないな
-[[1,2,3],[2,3,4],[3,4,5],...] ってのをつくってそれでまわそっか
-"""
-checker_all = []
-for i in range(len(imput)-2 ):
-    checker = [i, i+1, i+2]
-    checker_all.append(checker)
-
 rslt = []
 for ii in range(len(imput)-2):
-    if imput[checker_all[ii][0]]["pos"]=="名詞" and imput[checker_all[ii][1]]["pos"] == "助詞" and imput[checker_all[ii][1]]["base"] == "の" and imput[checker_all[ii][2]]["pos"]=="名詞":
-        rslt.append (imput[checker_all[ii][0]]["surface"] +imput[checker_all[ii][1]]["surface"] +imput[checker_all[ii][2]]["surface"])
+    if imput[ii]["pos"]=="名詞" and imput[ii+1]["pos"] == "助詞" and imput[ii+1]["base"] == "の" and imput[ii+2]["pos"]=="名詞":
+        rslt.append (imput[ii]["surface"] +imput[ii+1]["surface"] +imput[ii+2]["surface"])
 
 print(rslt)
