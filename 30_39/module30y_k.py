@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import MeCab,re
+import re
 
 # neko.txt.mecabの読み込み
 with open("../data/neko.txt.mecab", encoding="utf8") as f:
