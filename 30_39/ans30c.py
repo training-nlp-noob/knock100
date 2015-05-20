@@ -32,6 +32,6 @@ def f30(mecab_file) : # 引数にファイルを与える
     return(dic_list)
 
 if __name__ == '__main__':
-    rslt = f30 ("../data/neko.txt.mecab")
+    rslt = f30 ("./data/neko.txt.mecab")
     for i in rslt:
         print(i)
