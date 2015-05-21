@@ -15,7 +15,7 @@ dic={}
 # list[dic[0],dic[1],dic[2],...]形式で形態素を収納
 for i,line in enumerate(text):
     if line=="EOS\n":
-        break
+        continue
     dic[i]={}
     surface,pos,pos1,base=pattern.match(line).group("surface","pos","pos1","base")
     dic[i]["surface"]=surface
