@@ -2,19 +2,14 @@
 
 import module30y_k
 print("----------")
-verb = []
+verb = set() #重複を省く集合として定義
 # 品詞が動詞なら、表層形を表示
 for item in module30y_k.listx:
     if item["pos"]=="動詞":
-        verb.append(item["surface"])
+        verb.add(item["surface"]) #[]のappendが、setではadd
 
-num1 = len(verb)
-#重複を削除
-verb = list(set(verb))
-
-num2 = len(verb)
-
-print(str(num1)+"のリストから重複を削除して残り"+str(num2))
+#重複を削除されているのでリストに変換
+verb = list(verb)
 
 print("サンプルで、100個ほど表示")
 print(verb[:99])
