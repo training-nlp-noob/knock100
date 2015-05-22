@@ -10,7 +10,7 @@ listの各要素は辞書
 
 """
 
-import MeCab,re
+import re
 
 def f30(mecab_file) : # 引数にファイルを与える
     f=open( mecab_file, encoding="utf8")

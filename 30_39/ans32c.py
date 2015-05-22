@@ -7,7 +7,7 @@
 
 import ans30c
 
-imput = ans30c.f30("../data/neko.txt.mecab")
+imput = ans30c.f30("./data/neko.txt.mecab")
 verb_base = []
 for keitaiso in imput:
     if keitaiso["pos"] == "動詞":
