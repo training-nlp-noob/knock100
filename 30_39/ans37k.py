@@ -22,12 +22,11 @@
 import module30y_k as myk
 print("----------")
 
-#名詞の頻度を36だけどやってしまう
+#単語に修正　変数はmeisiのままだけど・・・
 
 meisi = []
 for item in myk.listx:
-    if item["pos"] == "名詞":
-        meisi.append(item["surface"])
+    meisi.append(item["surface"])
 
 #エクセルのcountifみたいな感じにする
 
@@ -42,7 +41,7 @@ for item2 in smeisi:
 #ならべかえ 2個目の「数字」で、逆順に並べ替え
 clist.sort(key=lambda x:(x[1]), reverse=True)
 
-for ten in clist[0:10]:
+for ten in clist[:10]: #clist[0:10]の省略
     print(ten)
 
 #さて、グラフを描きます
@@ -54,6 +53,8 @@ from matplotlib.font_manager import FontProperties
 #フォントを設定。Windowsようなので、あしからず
 fp = FontProperties(fname='C:\Windows\Fonts\meiryo.ttc')
 
+'''
+zipを使って書き換え
 X = list(range(1, 11)) #1から10まで
 Xlab = []
 Y = []
@@ -61,6 +62,8 @@ Y = []
 for item3 in clist[0:10]:
     Xlab.append(item3[0])
     Y.append(item3[1])
+'''
+Xlab, Y = zip(*clist[0:10])
 
 plt.bar(X,Y, align="center")  # 中央寄せ
 plt.xticks(X, Xlab, fontproperties=fp)

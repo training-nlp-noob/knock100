@@ -29,13 +29,18 @@ from matplotlib.font_manager import FontProperties
 #フォントを設定。Windowsようなので、あしからず
 fp = FontProperties(fname='C:\Windows\Fonts\meiryo.ttc')
 
+'''
+うーん、ご教授、素晴らしいです。下に書き換えです
 v_x = []
 v_y = []
 juni = 0
 for item in count_words.most_common(): #一応並べ替えてみる
-    juni = juni + 1
+    juni += 1
     v_x.append(juni)
     v_y.append(item[1])
+'''
+v_y = [item[1] for item in count_words.most_common()]
+v_x = range(1, len(v_y)+1) 
 
 plt.scatter(v_x, v_y)
 plt.xscale('log')
@@ -45,4 +50,7 @@ plt.ylim([0,10000])
 plt.title("出現単語", fontproperties=fp)
 plt.xlabel("出現順（対数表示）", fontproperties=fp)
 plt.ylabel("出現順回数（対数表示）", fontproperties=fp)
+plt.show()
+#線でつなぐなら、下記が便利
+plt.loglog(v_x, v_y)
 plt.show()
