@@ -51,6 +51,6 @@ def f_40 (input_file, line_no) : #ファイル名を入力する関数
 
 # 一番上に章番号がはいっているから それは除くよ
 if __name__ == '__main__':
-    rslt = f_40("./data/neko.txt.f1.cabocha",4)
+    rslt = f_40("./data/neko.txt.f1.cabocha",1+3)
     for i in rslt:
         print( i.surface, i.base, i.pos, i.pos1)
