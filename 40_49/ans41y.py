@@ -31,14 +31,14 @@ class Morph:
     
     def __init__(self, morph):
         self.surface, featurea = morph.split("\t")
-        featurea=featurea.split(",")
+        featurea = featurea.split(",")
         self.base = featurea[6]
         self.pos = featurea[0]
         self.pos1 = featurea[1]
 
 # Chunk(文節)の定義
 
-chunk_pattern=re.compile(r"(?P<INDEX>\d+)\s(?P<DST>((-1)|\d+))D[^\n]+\n(?P<MORPHS>.+)",re.S)
+chunk_pattern = re.compile(r"(?P<INDEX>\d+)\s(?P<DST>((-1)|\d+))D[^\n]+\n(?P<MORPHS>.+)",re.S)
 
 class Chunk:
     
@@ -56,12 +56,12 @@ class Chunk:
     
     def __init__(self, chunk):
         # dstの代入
-        self.dst, morphs=chunk_pattern.match(chunk).group("DST","MORPHS")
-        self.dst=int(self.dst)
+        self.dst, morphs = chunk_pattern.match(chunk).group("DST","MORPHS")
+        self.dst = int(self.dst)
         
         # Morphのリスト生成
         morphs = morphs.split("\n")
-        self.morphs= [Morph(morph) for morph in morphs if morph!=""]
+        self.morphs = [Morph(morph) for morph in morphs if morph != ""]
         
         # srcsの初期化
         # Sentence classで計算
@@ -79,25 +79,25 @@ class Sentence:
     def __init__(self, line):        
         # Chunkのリスト生成
         sentence = line.split("* ")
-        self.chunks = [Chunk(chunk) for chunk in sentence if chunk!=""]
+        self.chunks = [Chunk(chunk) for chunk in sentence if chunk != ""]
         
         # Chunk.srcsの計算
         # chunkごとに係り先Chunkのsrcsに自分のインデックスを追加
-        chunks_length=len(self.chunks)
+        chunks_length = len(self.chunks)
         
         for i,chunk in enumerate(self.chunks):
-            dst=chunk.dst
-            if dst>=0 and dst<chunks_length:
+            dst = chunk.dst
+            if dst >= 0 and dst < chunks_length:
                 self.chunks[dst].srcs.append(i)
 
 # MAIN
 if __name__ == '__main__':
     
     # neko.txt.f1.cabochaの読み込み
-    text=open("./data/neko.txt.f1.cabocha", encoding="utf8").read().split("EOS\n")
+    text = open("./data/neko.txt.f1.cabocha", encoding="utf8").read().split("EOS\n")
     
     # sentence_listにSentenceのリストを生成
-    sentence_list=[]
+    sentence_list = []
     for line in text:
         if line.startswith("*"):
             sentence_list.append(Sentence(line))
@@ -105,5 +105,5 @@ if __name__ == '__main__':
     # 8文目の文節の文字列と係り先を表示
     # 0文目は章番号のため1文目とカウントしていない
     for chunk in sentence_list[8].chunks:
-        surface_list =[morph.surface for morph in chunk.morphs]
+        surface_list = [morph.surface for morph in chunk.morphs]
         print(str(chunk.dst)+" "+str(surface_list))
