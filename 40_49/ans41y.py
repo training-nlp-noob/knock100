@@ -101,8 +101,6 @@ if __name__ == '__main__':
     for line in text:
         if line.startswith("*"):
             sentence_list.append(Sentence(line))
-        
-    text.close()
     
     # 8文目の文節の文字列と係り先を表示
     # 0文目は章番号のため1文目とカウントしていない
