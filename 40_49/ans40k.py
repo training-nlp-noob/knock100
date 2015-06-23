@@ -23,9 +23,11 @@ neko_txt_cabocha = []   #リストに格納？なのかなぁ？
 temp_list = []  #EOSを文の区切りとする
 
 with open (filepath, encoding="utf8") as f:
-    text = f.readlines()
-    for line in text:
-        if line[:3] == "EOS" :
+    #text = f.readlines()
+    #for line in text:
+    for line in f:
+        #if line[:3] == "EOS" :
+        if line.startswith("EOS"):
             neko_txt_cabocha.append(temp_list)
             temp_list = []
         elif line[:1] == "*":
