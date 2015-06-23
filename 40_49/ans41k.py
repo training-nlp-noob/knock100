@@ -32,7 +32,10 @@ class Chunk:
     #          係り元文節インデックス番号のリスト（srcs）] 
 
     def __init__(self, chunk):
-        self.morphs, dst, srcs = chunk
+        #self.morphs, dst, srcs = chunk
+        self.morphs = chunk[0]
+        self.dst = chunk[1]
+        self.srcs = chunk[2]
 
 def f_sentence(sentence):
     i=-1
@@ -73,8 +76,8 @@ if __name__ == '__main__':
         # sentenceに1文を入れて、それをsentencesに渡す
         sentence = []
         for line in text:
-            line = line.strip() # 改行(\n)や空白を落とす
-            if line == 'EOS':
+            #line = line.strip() # 改行(\n)や空白を落とす
+            if line.startswith('EOS'):
                 if len(sentence)>0:
                     sentences.append(f_sentence(sentence))
                 else:
@@ -83,6 +86,9 @@ if __name__ == '__main__':
             else:
                 sentence.append(line)
 
-    print(sentences[1])
-    
+    print(sentences[8])
+
+    for chunk in sentences[8]:
+        surface_list = [morph.surface for morph in chunk.morphs]
+        print(str(chunk.dst)+" "+str(surface_list))
 
