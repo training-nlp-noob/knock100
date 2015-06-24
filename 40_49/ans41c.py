@@ -67,7 +67,7 @@ essey 以下の senntence をリストでまとめる
 sentence chunk のあつまり
 """
 
-def f_40() :
+def f_41() :
     essey = []
     with open("./data/neko.txt.f1.cabocha", "r") as f:
         buffer = ""
@@ -80,11 +80,11 @@ def f_40() :
                 buffer += line
     return(essey)
 
-# f_40 は 全体を 文のりすと
+# f_41 は 全体を 文のりすと
 # 文は Chunkオブジェクトのリストで返してくる
 
 
 if __name__ == '__main__':
-    for chunk in f_40()[8]:
+    for chunk in f_41()[8]:
         surface_list = [morph.surface for morph in chunk.morphs]
         print(str(chunk.dst)+" "+str(surface_list))
