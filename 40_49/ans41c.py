@@ -12,9 +12,9 @@ import re
 class Morph:
     def __init__(self, line): #lineは入力の1行
         self.surface, morph_elems = line.split("\t")
-        self.base = morph_elems[6]
-        self.pos = morph_elems[0]
-        self.pos1 = morph_elems[1]
+        self.base = morph_elems.split(",")[6]
+        self.pos = morph_elems.split(",")[0]
+        self.pos1 = morph_elems.split(",")[1]
 
 chunk_pattern = re.compile(r"(?P<INDEX>\d+)\s(?P<DST>((-1)|\d+))D[^\n]+\n(?P<MORPHS>.+)",re.S)
 #うまいなー 複数行をまとめてchunk_patternとして処理しようって戦略なのね
@@ -87,4 +87,4 @@ def f_41() :
 if __name__ == '__main__':
     for chunk in f_41()[8]:
         surface_list = [morph.surface for morph in chunk.morphs]
-        print(str(chunk.dst)+" "+str(surface_list))
+        print(str(chunk.dst)+" "+str("".join(surface_list)))

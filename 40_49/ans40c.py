@@ -19,9 +19,9 @@ http://qiita.com/nezuq/items/f481f07fc0576b38e81d
 class Morph:
     def __init__(self, line): #lineは入力の1行
         self.surface, morph_elems = line.split("\t")
-        self.base = morph_elems[6]
-        self.pos = morph_elems[0]
-        self.pos1 = morph_elems[1]
+        self.base = morph_elems.split(",")[6]
+        self.pos = morph_elems.split(",")[0]
+        self.pos1 = morph_elems.split(",")[1]
 
 
 #使ってみよう
