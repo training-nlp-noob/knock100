@@ -62,12 +62,9 @@ def f_sentence(sentence):
         c_sentence.append(Chunk(chunk))
     return c_sentence
 
-# MAIN
-if __name__ == '__main__':
-    
+def ans41():
     # /data/neko.txt.f1.cabocha を読み込む
     #　このスクリプト自体は/data/40_49/にあることが前提
-    
     filepath = os.path.abspath(os.path.dirname(__file__)+ "/../data/neko.txt.f1.cabocha")
     sentences = []
 
@@ -85,10 +82,15 @@ if __name__ == '__main__':
                 sentence = []
             else:
                 sentence.append(line)
+    return sentences
 
-    print(sentences[8])
+# MAIN
+if __name__ == '__main__':
 
-    for chunk in sentences[8]:
+    msentences = ans41()
+    print(msentences[8])
+
+    for chunk in msentences[8]:
         surface_list = [morph.surface for morph in chunk.morphs]
         print(str(chunk.dst)+" "+str(surface_list))
 

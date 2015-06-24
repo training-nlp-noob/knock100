@@ -26,8 +26,8 @@ def mainf():
     # /data/neko.txt.f1.cabocha を読み込む
     #　このスクリプト自体は/data/40_49/にあることが前提
 
-    #filepath = os.path.abspath(os.path.dirname(__file__)+ "/../data/neko.txt.f1.cabocha")
-    filepath = "C:/Users/owner/OneDrive/GitHub/knock100/data/neko.txt.f1.cabocha"
+    filepath = os.path.abspath(os.path.dirname(__file__)+ "/../data/neko.txt.f1.cabocha")
+    #filepath = "C:/Users/owner/OneDrive/GitHub/knock100/data/neko.txt.f1.cabocha"
 
     neko_txt_cabocha = []   #リストに格納？なのかなぁ？
     temp_list = []  #EOSを文の区切りとする
