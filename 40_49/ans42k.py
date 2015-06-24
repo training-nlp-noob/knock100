@@ -12,10 +12,6 @@ import os
 from datetime import datetime   #ファイル名に時刻を入れる
 #from ans40k_with_Morph import Morph
 msentences = ans41()
-print(msentences[8])
-for chunk in msentences[8]:
-    surface_list = [morph.surface for morph in chunk.morphs]
-    print(str(chunk.dst)+" "+str(surface_list))
 
 wfilepath = os.path.abspath(os.path.dirname(__file__)+ "/../data/" + datetime.now().strftime('%Y%m%d%H%M%S') +".txt")
 
