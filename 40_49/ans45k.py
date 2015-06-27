@@ -21,15 +21,14 @@ with open(wfilepath, mode = 'a', encoding = 'utf-8') as af:
         for chunk in sentence:
             for morph in chunk.morphs:
                 if morph.pos == "動詞":
-                    dousikaku += morph.base
+                    josi = []
                     for srcs2 in chunk.srcs:
                         for morph2 in sentence[srcs2].morphs:
                             if morph2.pos == "助詞":
-                                dousikaku += " " + morph2.base
+                                josi.append(morph2.base)
                             else:
                                 continue
-                    af.write(dousikaku + "\n")
-                    dousikaku = ""
+                    af.write(morph.base + "\t" + " ".join(josi) + "\n")
                     break
                 else:
                     continue
