@@ -50,9 +50,9 @@ def f_sentence(sentence):
     #次にかかり元を地道に処理する、もう一周回す
     j=-1
     for line2 in sentence:
-        if line.startswith("*"):
+        if line2.startswith("*"):
             j += 1
-            saki = int(line.split(" ")[2][:-1])
+            saki = int(line2.split(" ")[2][:-1])
             chunks[saki][2].append(j)
         else:
             continue
