@@ -8,6 +8,8 @@
 40に加えて，文節を表すクラスChunkを実装せよ．このクラスは形態素（Morphオブジェクト）のリスト（morphs），係り先文節インデックス番号（dst），係り元文節インデックス番号のリスト（srcs）をメンバ変数に持つこととする．
 """
 
+# クラスChunkもimport しないとダメなのかしら？？
+
 from ans41c import f_41
 input = f_41()
 for sentence in input :
