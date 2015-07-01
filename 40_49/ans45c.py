@@ -26,6 +26,7 @@ essay = f_41()
 # essay[5] が例文
 #essay = essay[5:6]
 
+forout = ""
 for sentence in essay :
     for chunks in sentence :
         pos_list = [s.pos for s in chunks.morphs]
@@ -38,3 +39,19 @@ for sentence in essay :
             #格は空リストのままのときもあるけどそのまま出力
             kaku.sort()
             print(zyutugo + "\t" +" ".join(kaku))
+            forout += zyutugo + "\t" +" ".join(kaku) + "\n"
+
+
+with open("ans45c_out.txt", "w") as w:
+    w.write(forout)
+
+
+"""
+このプログラムの出力をファイルに保存し，以下の事項をUNIXコマンドを用いて確認せよ．
+コーパス中で頻出する述語と格パターンの組み合わせ
+「する」「見る」「与える」という動詞の格パターン（コーパス中で出現頻度の高い順に並べよ）
+
+cat ans45c_out.txt | sort | uniq -c |sort -nr | head
+grep -E "^する" ans45c_out.txt | sort |uniq -c | sort -nr
+grep -E "^する|^見る|^与える" ans45c_out.txt | sort |uniq -c | sort -nr
+"""
