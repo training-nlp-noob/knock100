@@ -31,16 +31,9 @@ for sentence in essay :
         pos_list = [s.pos for s in chunks.morphs]
         if "動詞" in pos_list:
             zyutugo =[s.base for s in chunks.morphs if s.pos == "動詞"][0]
-#            print(zyutugo)
-#            print([s.surface for s in chunks.morphs])
-#            print([s.pos for s in chunks.morphs])
-#            print(chunks.srcs)
             kaku = []
             for src in chunks.srcs:
                 moto = sentence[src]
-#                print([m.pos for m in moto.morphs])
-#                print([m.surface for m in moto.morphs])
-#                print("   ")
                 kaku.extend([m.base for m in moto.morphs if m.pos == "助詞"])
             #格は空リストのままのときもあるけどそのまま出力
             kaku.sort()
