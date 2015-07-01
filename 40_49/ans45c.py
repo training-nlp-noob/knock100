@@ -41,7 +41,7 @@ for sentence in essay :
 #                print([m.pos for m in moto.morphs])
 #                print([m.surface for m in moto.morphs])
 #                print("   ")
-                kaku.extend([m.surface for m in moto.morphs if m.pos == "助詞"])
+                kaku.extend([m.base for m in moto.morphs if m.pos == "助詞"])
             #格は空リストのままのときもあるけどそのまま出力
             kaku.sort()
             print(zyutugo + "\t" +" ".join(kaku))
