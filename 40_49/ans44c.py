@@ -22,11 +22,12 @@ sentence = f_41()[8]
 
 G = pgv.AGraph(directed=True)
 for chunks in sentence :
-    saki_chunk = sentence[chunks.dst]
-    moto = "".join([m.surface for m in chunks.morphs if m.pos != "記号"])
-    saki = "".join([s.surface for s in saki_chunk.morphs if s.pos != "記号"])
-    print( moto + "\t" + saki)
-    G.add_edge(moto,saki)
+    if chunks.dst != -1:
+        saki_chunk = sentence[chunks.dst]
+        moto = "".join([m.surface for m in chunks.morphs if m.pos != "記号"])
+        saki = "".join([s.surface for s in saki_chunk.morphs if s.pos != "記号"])
+        print( moto + "\t" + saki)
+        G.add_edge(moto,saki)
 
 
 G.layout()
