@@ -26,6 +26,16 @@ essay = f_41()
 # essay[5] が例文
 #essay = essay[5:6]
 
+
+"""
+追記
+述語に係る助詞を格とする
+これってひとつの文節のなかで最後の助詞だけとってくるって意味かも
+ということで 修正
+"""
+
+
+
 forout = ""
 for sentence in essay :
     for chunks in sentence :
@@ -35,7 +45,8 @@ for sentence in essay :
             kaku = []
             for src in chunks.srcs:
                 moto = sentence[src]
-                kaku.extend([m.base for m in moto.morphs if m.pos == "助詞"])
+                if "助詞" in [m.pos for m in moto.morphs]:
+                    kaku.append([m.base for m in moto.morphs if m.pos == "助詞"][-1])
             #格は空リストのままのときもあるけどそのまま出力
             kaku.sort()
             print(zyutugo + "\t" +" ".join(kaku))
