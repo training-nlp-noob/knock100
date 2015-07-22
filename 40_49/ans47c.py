@@ -39,7 +39,7 @@ for sentence in essay :
             target = 0
             for src in chunks.srcs:
                 moto = sentence[src]
-                if len([m.pos for m in moto.morphs if m.pos != "記号"]) == 2:
+                if len([m.pos for m in moto.morphs if m.pos != "記号"]) >= 2:
                     if "助詞" == [m.pos for m in moto.morphs if m.pos != "記号"][-1]  \
                     and "を" in [m.base for m in moto.morphs if m.pos != "記号"][-1]  \
                     and "サ変接続" == [m.pos1 for m in moto.morphs if m.pos != "記号"][0] \
@@ -76,7 +76,7 @@ cat ans47c_out.txt | cut -f -2 |sort | uniq -c |sort -nr | head
 これでいいのかな
 """
 
-"""
+
 
 
 """
