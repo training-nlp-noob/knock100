@@ -51,24 +51,3 @@ for sentence in essay :
 http://blog.livedoor.jp/yawamen/archives/51492355.html
 lambda ってなんだ？？
 """
-
-#with open("ans45c_out.txt", "w") as w:
-#    w.write(forout)
-
-
-"""
-このプログラムの出力をファイルに保存し，以下の事項をUNIXコマンドを用いて確認せよ．
-コーパス中で頻出する述語と格パターンの組み合わせ
-「する」「見る」「与える」という動詞の格パターン（コーパス中で出現頻度の高い順に並べよ）
-
-cat ans45c_out.txt | sort | uniq -c |sort -nr | head
-grep -E "^する" ans45c_out.txt | sort |uniq -c | sort -nr
-grep -E "^する|^見る|^与える" ans45c_out.txt | sort |uniq -c | sort -nr
-"""
-
-"""
-#kakuの長さとkouの長さは同じはず
-if len(kaku) - len(kou) != 0:
-    print(len(kaku))
-    print(len(kou))
-"""
