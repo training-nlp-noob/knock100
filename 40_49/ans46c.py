@@ -32,19 +32,19 @@ for sentence in essay :
         pos_list = [s.pos for s in chunks.morphs]
         if "動詞" in pos_list:
             zyutugo =[s.base for s in chunks.morphs if s.pos == "動詞"][0]
-            #dicは 1述語にひとつ
-            print(zyutugo, "\t", end="")
+            #dicは 1述語にひとつ sortの順番を合わせるため
             dic = {}
+            kaku =[]
+            kou = []
             for src in chunks.srcs:
                 moto = sentence[src]
                 if "助詞" in [m.pos for m in moto.morphs]:
                     #key=項 value = 格
                     dic["".join([m.surface for m in moto.morphs])] = [m.base for m in moto.morphs if m.pos =="助詞"][-1]
             for k, v in sorted(dic.items(), key=lambda x:x[1]):
-                print(v, " ", end="")
-            for k, v in sorted(dic.items(), key=lambda x:x[1]):
-                print(k, " ", end ="")
-            print("\n", end="")
+                kaku.append(v)
+                kou.append(k)
+            print(zyutugo, "\t", " ".join(kaku), "\t", " ".join(kou))
 
 
 """
