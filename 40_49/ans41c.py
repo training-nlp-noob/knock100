@@ -19,8 +19,13 @@ class Morph:
 chunk_pattern = re.compile(r"(?P<INDEX>\d+)\s(?P<DST>((-1)|\d+))D[^\n]+\n(?P<MORPHS>.+)",re.S)
 #うまいなー 複数行をまとめてchunk_patternとして処理しようって戦略なのね
 
+##Q49のためにindexを保持
+
 class Chunk:
     def __init__(self, chunk):
+        #indexの保持
+        self.index = chunk_pattern.match(chunk).group("INDEX")
+        self.index = int(self.index)
         # dstの代入
         self.dst, morphs = chunk_pattern.match(chunk).group("DST","MORPHS")
         self.dst = int(self.dst)
